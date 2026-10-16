@@ -17,7 +17,7 @@ int main()
 	}
 
 	inFile.get(inChar);
-	while (inChar != '\n')
+	while (inChar != '\n') // Sentinel value of '\n'
 	{
 		cout << inChar << endl;
 		inFile.get(inChar);
