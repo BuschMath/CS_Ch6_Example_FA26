@@ -1,16 +1,30 @@
 #include <iostream>
+#include <fstream>
 
 using namespace std;
 
 int main()
 {
-	int counter = 1;
+	char inChar;
+	ifstream inFile;
 
-	while (counter <= 10000)
+	inFile.open("C:/Users/busch/OneDrive - Iowa Central Community College/Classes/FA17/C++/Presentations/Ch6Examples/SentinelInputData.dat");
+
+	if (!inFile)
 	{
-		cout << counter << endl;
-		counter = counter + 1;
+		cout << "File failed to open!\n";
+		return 1;
 	}
+
+	inFile.get(inChar);
+	while (inChar != '\n')
+	{
+		cout << inChar << endl;
+		inFile.get(inChar);
+	}
+	cout << endl;
+
+	inFile.close();
 
 	return 0;
 }
